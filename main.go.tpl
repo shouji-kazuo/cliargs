@@ -28,7 +28,7 @@ func main() {
 			},
 		},
 		Action: func(aContext *cli.Context) error {
-			args, err := cliargs.Wrap(aContext.Args(), cliargs.DefaultFuncWhenSingleHyphen)
+			args, err := cliargs.WrapPOSIXLike(aContext.Args(), cliargs.DefaultFuncWhenSingleHyphen)
 			if err != nil {
 				return err
 			}
