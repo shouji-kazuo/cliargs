@@ -15,7 +15,7 @@ type args []string
 // DefaultFuncWhenSingleHyphen は，cli.Appの引数の最後に "-" が与えられた時のデフォルトの挙動を示す．
 // 標準入力から空白区切りの引数列を読み，stringのスライスにして返す．
 // 空白文字の定義は， unicode.IsSpace() == true となる rune型 とする．
-var DefaultFuncWhenSingleHyphen = func() ([]string, error) {
+var DefaultFuncAtLastSingleHyphen = func() ([]string, error) {
 	scanner := bufio.NewScanner(os.Stdin)
 	args := make([]string, 0, 16)
 	separateWhiteSpaceFunc := func(r rune) bool {
