@@ -36,7 +36,8 @@ func WrapPOSIXLike(oldArgs cli.Args, onLastSingleHyphen func() ([]string, error)
 	oldArgsSlice := oldArgs.Slice()
 
 	if len(oldArgsSlice) <= 0 {
-		return args([]string{}), nil
+		a := args([]string{})
+		return &a, nil
 	}
 
 	// 引数列に "-" が入っているなら "-"を取り除く
